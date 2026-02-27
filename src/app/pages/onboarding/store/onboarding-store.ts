@@ -13,53 +13,53 @@ export interface EntityData {
   companyName: string;
 }
 
-export type PlanType = 'starter' | 'business_box' | 'tax_compliance' | '';
+export type PlanType = 'starter' | 'business_in_a_box' | 'tax_compliance' | '';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OnboardingStore {
-  // 1. Número de paso actual (del 1 al 5)
   currentStep = signal<number>(1);
+  direction = signal<'forward' | 'backward'>('forward'); // 👈 agregado
+  leadId = signal<string>(''); // UUID de la BD asignado al lead
 
-  // 2. Datos recolectados en el paso 1
   leadData = signal<LeadData>({ firstName: '', lastName: '', email: '' });
 
-  // 3. Datos del paso 2 (Estado, Tipo y Nombre de Empresa)
   entityData = signal<EntityData>({ state: '', type: '', companyName: '' });
 
-  // 4. Paquete elegido (paso 3)
   selectedPlan = signal<PlanType>('');
 
-  // 💰 STATE DERIVADO (Computed Signals)
-  // Reactividad pura: Angular recalcula esto automáticamente si algo cambia
   basePrice = computed(() => {
     switch (this.selectedPlan()) {
       case 'starter': return 299;
-      case 'business_box': return 2999;
+      case 'business_in_a_box': return 2999;
       case 'tax_compliance': return 1999;
       default: return 0;
     }
   });
 
   stateFee = computed(() => {
-    // Ejemplo: $103 genérico para WY. Podemos ajustar la lógica luego.
     return this.entityData().state ? 103 : 0;
   });
 
   totalPrice = computed(() => this.basePrice() + this.stateFee());
 
-  // ✅ FUNCIONES DE CONTROL (Actions)
   nextStep() {
+    this.direction.set('forward'); // 👈 agregado
     this.currentStep.update(s => Math.min(s + 1, 5));
   }
 
   prevStep() {
+    this.direction.set('backward'); // 👈 agregado
     this.currentStep.update(s => Math.max(s - 1, 1));
   }
 
   setStep(step: number) {
     this.currentStep.set(step);
+  }
+
+  setLeadId(id: string) {
+    this.leadId.set(id);
   }
 
   updateLead(data: Partial<LeadData>) {
