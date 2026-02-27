@@ -1,0 +1,40 @@
+<section id="features" class="w-full bg-white py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto">
+        <!-- Encabezado de la Sección -->
+        <div class="text-center max-w-3xl mx-auto mb-16" animate.enter="slide-in">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-secondary tracking-tight mb-4">
+                Servicios All-in-One para Founders Globales
+            </h2>
+            <p class="text-lg text-secondary-light">
+                De cero a empresa operativa en días. Construimos un ecosistema para que cualquier emprendedor arme su
+                imperio digital.
+            </p>
+        </div>
+
+        <!-- Grilla (Grid) CSS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Tarjetas iteradas de ts -->
+            @for (feature of features; track feature.title) {
+            <div
+                class="bg-background-card border border-gray-100 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-50/50 rounded-2xl p-8 sm:p-10 transition-all duration-300 transform hover:-translate-y-1 group">
+
+                <!-- Icono -->
+                <div
+                    class="w-14 h-14 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-8 w-8 text-primary group-hover:text-white transition-colors duration-300" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="feature.icon" />
+                    </svg>
+                </div>
+
+                <!-- Textos -->
+                <h3 class="text-xl font-bold text-secondary mb-3">{{ feature.title }}</h3>
+                <p class="text-secondary-light leading-relaxed">
+                    {{ feature.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

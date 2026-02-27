@@ -1,1 +1,241 @@
-<p>pricing works!</p>
+<div class="h-screen overflow-y-auto overflow-x-hidden bg-background-card scroll-smooth">
+    <!-- Navbar simulado corporativo (Heredado de Home) -->
+    <nav
+        class="w-full h-16 bg-white/80 backdrop-blur-md border-b border-gray-100 flex items-center justify-between px-4 sm:px-8 sticky top-0 z-50">
+        <div class="text-xl font-black text-secondary tracking-tighter cursor-pointer" routerLink="/">Simulation NC
+        </div>
+        <div class="hidden sm:flex items-center gap-6 text-sm font-semibold text-secondary-light">
+            <a routerLink="/services" class="hover:text-primary transition-colors">Servicios</a>
+            <a routerLink="/pricing" class="text-primary transition-colors">Precios</a>
+            <a routerLink="/onboarding"
+                class="px-4 py-2 bg-primary text-white hover:bg-primary-dark rounded-lg transition-colors shadow-sm">Fundar
+                LLC Ahora</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 px-4 text-center bg-gradient-to-b from-blue-50/50 to-transparent">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <span
+                    class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-bold rounded-full tracking-wide">
+                    Precios Claros 💎
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black text-secondary leading-tight tracking-tight">
+                    Formación Transparente.<br>
+                    <span
+                        class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400">Sin
+                        Precios Ocultos.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-secondary-light font-medium max-w-2xl mx-auto leading-relaxed">
+                    Escoge el paquete que mejor se adapte a tu meta corporativa. Ya sea lanzar rápido o construir una
+                    sede a prueba de balas, lo tenemos cubierto.
+                </p>
+            </div>
+        </section>
+
+        <!-- Pricing Grid -->
+        <section class="py-12 px-4 pb-24">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-stretch relative">
+                <!-- Tarjeta 1: Starter -->
+                <div
+                    class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100/80 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Basic Starter</h3>
+                        <p class="text-secondary-light text-sm font-medium h-10">Ideal para nomadas digitales y negocios
+                            pequeños.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-2 mb-8 pb-8 border-b border-gray-100">
+                        <span class="text-5xl font-black text-secondary">$299</span>
+                        <span class="text-secondary-light font-medium text-sm">+ State Fees (pago único)</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-secondary-light font-medium text-sm flex-1">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Preparación y Archivo de Artículos de Organización (LLC/Corp).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>1 Año de Agente Registrado Incluido.</span>
+                        </li>
+                        <li class="flex items-start gap-3 opacity-50">
+                            <svg class="w-5 h-5 text-gray-300 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span>Obtención de Número EIN Federal (No incluido).</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto">
+                        <button routerLink="/onboarding"
+                            class="w-full py-4 bg-gray-50 text-secondary hover:bg-gray-100 font-bold rounded-xl transition-colors border border-gray-200">
+                            Seleccionar Starter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Business Box (Destacada) -->
+                <div
+                    class="bg-secondary rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-blue-900/10 border border-secondary-light/20 flex flex-col h-full relative">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-blue-400 text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">
+                        Más Elegido
+                    </div>
+
+                    <div class="mb-8 mt-2">
+                        <h3 class="text-2xl font-bold text-white mb-2">Business Box</h3>
+                        <p class="text-white/70 text-sm font-medium h-10">Todo listo para procesar pagos y banca en
+                            EE.UU.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-2 mb-8 pb-8 border-b border-white/10">
+                        <span class="text-5xl font-black text-white">$2,999</span>
+                        <span class="text-white/70 font-medium text-sm">+ State Fees (pago único)</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-white/80 font-medium text-sm flex-1">
+                        <li class="flex items-start gap-3 text-white">
+                            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-bold">Todo lo del paquete Starter, más:</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Obtención prioritaria del Tax ID (EIN).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Configuración de Cuenta Bancaria en EE.UU.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Integración y apertura de Pasarela de Pagos (Stripe).</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto">
+                        <button routerLink="/onboarding"
+                            class="w-full py-4 bg-primary text-white hover:bg-white hover:text-secondary hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] font-bold rounded-xl transition-all duration-300">
+                            Seleccionar Business Box
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Tax Compliance -->
+                <div
+                    class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100/80 hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Tax Compliance</h3>
+                        <p class="text-secondary-light text-sm font-medium h-10">Mantenimiento y contabilidad
+                            corporativa anual.</p>
+                    </div>
+
+                    <div class="flex items-baseline gap-2 mb-8 pb-8 border-b border-gray-100">
+                        <span class="text-5xl font-black text-secondary">$1,999</span>
+                        <span class="text-secondary-light font-medium text-sm">/ año</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-10 text-secondary-light font-medium text-sm flex-1">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Renovación Anual del Estado + Agente Registrado.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Reportes Anuales Obligatorios (BOI / Reporte Estatal).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Preparación de Impuestos Fijos (Formas 1120 / 5472).</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto">
+                        <button routerLink="/onboarding"
+                            class="w-full py-4 bg-gray-50 text-secondary hover:bg-gray-100 font-bold rounded-xl transition-colors border border-gray-200">
+                            Elegir Compliance
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Preguntas Frecuentes</h2>
+                    <p class="text-secondary-light">Despejamos tus dudas antes de que tomes una decisión.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl">
+                        <h4 class="text-lg font-bold text-secondary mb-2">¿Qué significa "+ State Fees"?</h4>
+                        <p class="text-secondary-light text-sm">Cada Estado de EE.UU. cobra una tarifa obligatoria
+                            gubernamental por registrar compañías en su jurisdicción. Nosotros no tocamos ese dinero,
+                            pasamos el costo exacto a ti al finalizar el checkout. Varía desde $50 (NM) hasta cientos de
+                            dólares.</p>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl">
+                        <h4 class="text-lg font-bold text-secondary mb-2">¿Tengo que pagar esto todos los meses?</h4>
+                        <p class="text-secondary-light text-sm">¡Para nada! El pago para fundar tu compañía es un cobro
+                            único (One-Time). Hacia el futuro, lo único recurrente que se paga anualmente es el servicio
+                            de Agente Registrado y tus obligaciones fiscales corporativas locales.</p>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl">
+                        <h4 class="text-lg font-bold text-secondary mb-2">¿Qué pasa después de que pago?</h4>
+                        <p class="text-secondary-light text-sm">Automáticamente enviaremos tus documentos a la
+                            Secretaría de Estado seleccionada. Dependiendo del Estado, la aprobación puede tomar desde
+                            horas hasta un un par de días hábiles. Te mantendremos notificado al correo electrónico en
+                            cada paso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <app-footer />
+</div>

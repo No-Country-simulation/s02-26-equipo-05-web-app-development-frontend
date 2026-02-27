@@ -1,1 +1,115 @@
-<p>services works!</p>
+<div class="h-screen overflow-y-auto overflow-x-hidden bg-background-card scroll-smooth relative">
+    <!-- Navbar simulado corporativo -->
+    <nav
+        class="w-full h-16 bg-white/80 backdrop-blur-md border-b border-gray-100 flex items-center justify-between px-4 sm:px-8 sticky top-0 z-50">
+        <div class="text-xl font-black text-secondary tracking-tighter cursor-pointer" routerLink="/">Simulation NC
+        </div>
+        <div class="hidden sm:flex items-center gap-6 text-sm font-semibold text-secondary-light">
+            <a routerLink="/services" class="text-primary transition-colors">Servicios</a>
+            <a routerLink="/pricing" class="hover:text-primary transition-colors">Precios</a>
+            <a routerLink="/onboarding"
+                class="px-4 py-2 bg-primary text-white hover:bg-primary-dark rounded-lg transition-colors shadow-sm">Fundar
+                LLC Ahora</a>
+        </div>
+    </nav>
+
+    <main class="pb-32">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-28 px-4 text-center bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-black text-secondary mb-6 tracking-tight">
+                    Mucho más que <span class="text-primary">abrir una empresa.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-secondary-light font-medium max-w-2xl mx-auto leading-relaxed">
+                    Mantén tu compañía legal, blindada y al día con el gobierno federal de los Estados Unidos a través
+                    de nuestros servicios complementarios.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="py-12 px-4 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Servicio 1: Agente Registrado -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Renovación de Agente Registrado</h3>
+                    <p class="text-secondary-light text-sm leading-relaxed mb-6">
+                        Es obligatorio por ley tener una dirección física y una persona disponible en horario laboral en
+                        tu estado de formación para recibir demandas legales. Nosotros somos tu escudo.
+                    </p>
+                    <div class="text-2xl font-black text-secondary">$150 <span
+                            class="text-sm text-secondary-light font-medium">/ año</span></div>
+                </div>
+
+                <!-- Servicio 2: Tax Return -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Declaración de Impuestos</h3>
+                    <p class="text-secondary-light text-sm leading-relaxed mb-6">
+                        Evita multas de $25,000 dólares con el IRS. Declaramos tu Formulario 1120 o 5472 + 1120 proforma
+                        cada abril, seas residente fiscal americano o fundador extranjero.
+                    </p>
+                    <div class="text-2xl font-black text-secondary">$450 <span
+                            class="text-sm text-secondary-light font-medium">/ anual</span></div>
+                </div>
+
+                <!-- Servicio 3: Enmiendas -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Enmiendas y Certificados</h3>
+                    <p class="text-secondary-light text-sm leading-relaxed mb-6">
+                        ¿Cambiaste de nombre la empresa? ¿Necesitas un Certificado de Good Standing para abrir una
+                        pasarela de pagos? Tramitamos cualquier alteración legal con el Estado.
+                    </p>
+                    <div class="text-2xl font-black text-secondary">A consultar</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global CTA Bottom -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 md:p-6 z-40 transform translate-y-0 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+        <div
+            class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <h4 class="font-bold text-secondary">¿Listo para tomar el control de tu negocio?</h4>
+                <p class="text-sm text-secondary-light">Funda tu compañía 100% online en menos de 10 minutos.</p>
+            </div>
+            <button routerLink="/onboarding"
+                class="w-full sm:w-auto px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-blue-500/30 whitespace-nowrap">
+                Comenzar Onboarding
+            </button>
+        </div>
+    </div>
+
+    <!-- Padding extra por culpa del Fixed bottom -->
+    <div class="h-24"></div>
+
+    <app-footer />
+</div>
