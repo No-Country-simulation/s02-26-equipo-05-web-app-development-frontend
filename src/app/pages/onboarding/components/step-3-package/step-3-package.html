@@ -1,1 +1,183 @@
-<p>step-3-package works!</p>
+<div class="max-w-4xl mx-auto mt-6">
+
+    <div class="mb-8 text-center">
+        <h2 class="text-3xl font-extrabold text-secondary mb-2">Selecciona tu Paquete</h2>
+        <p class="text-secondary-light">Precios transparentes. Sin sorpresas. Todo lo que necesitas para operar en
+            EE.UU.</p>
+    </div>
+
+    <div class="space-y-8">
+
+        <!-- GRILLA DE PAQUETES (3 Columnas) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- 1. STARTER PLAN -->
+            <div (click)="selectPlan('starter')"
+                class="cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'starter', 'border-gray-200': store.selectedPlan() !== 'starter'}">
+                <h3 class="text-lg font-bold text-secondary">Starter</h3>
+                <p class="text-sm text-secondary-light mt-2 h-10">Lo básico para abrir tu empresa legalmente.</p>
+                <div class="mt-4 mb-6">
+                    <span class="text-4xl font-extrabold text-secondary">$299</span>
+                    <span class="text-sm text-secondary-light"> / pago único</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Constitución de Empresa
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Registered Agent (1 año)
+                    </li>
+                    <li class="flex items-start text-sm text-secondary line-through opacity-50">
+                        <svg class="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg> EIN (Número Impuestos)
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'starter', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'starter'}">
+                        {{ store.selectedPlan() === 'starter' ? 'Seleccionado' : 'Elegir Starter' }}
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. BUSINESS BOX (POPULAR) -->
+            <div (click)="selectPlan('business_in_a_box')"
+                class="relative cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'business_in_a_box', 'border-gray-200': store.selectedPlan() !== 'business_in_a_box'}">
+
+                <!-- Etiqueta Popular -->
+                <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-3">
+                    <span
+                        class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">Más
+                        Elegido</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-secondary">Business Box</h3>
+                <p class="text-sm text-secondary-light mt-2 h-10">Todo listo para procesar pagos y banco en EE.UU.</p>
+                <div class="mt-4 mb-6">
+                    <span class="text-4xl font-extrabold text-secondary">$2,999</span>
+                    <span class="text-sm text-secondary-light"> / pago único</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-start text-sm text-secondary font-medium">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Todo lo del plan Starter
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Obtención del Tax ID (EIN)
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Configuración Cuenta Bancaria
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Pasarela de Pagos (Stripe)
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'business_in_a_box', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'business_in_a_box'}">
+                        {{ store.selectedPlan() === 'business_in_a_box' ? 'Seleccionado' : 'Elegir Business Box' }}
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. TAX COMPLIANCE -->
+            <div (click)="selectPlan('tax_compliance')"
+                class="cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'tax_compliance', 'border-gray-200': store.selectedPlan() !== 'tax_compliance'}">
+                <h3 class="text-lg font-bold text-secondary">Tax Compliance</h3>
+                <p class="text-sm text-secondary-light mt-2 h-10">Mantenimiento y contabilidad anual para tranquilidad.
+                </p>
+                <div class="mt-4 mb-6">
+                    <span class="text-4xl font-extrabold text-secondary">$1,999</span>
+                    <span class="text-sm text-secondary-light"> / año</span>
+                </div>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Renovación Estado + Agente
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Reportes Anuales (BOI / State)
+                    </li>
+                    <li class="flex items-start text-sm text-secondary">
+                        <svg class="h-5 w-5 text-status-success mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg> Preparación de Impuestos Fijos
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'tax_compliance', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'tax_compliance'}">
+                        {{ store.selectedPlan() === 'tax_compliance' ? 'Seleccionado' : 'Elegir Compliance' }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RESUMEN DINÁMICO DEL COSTO Y BOTONES -->
+        <div
+            class="bg-white border-t-4 border-primary shadow-2xl rounded-xl p-6 flex flex-col md:flex-row items-center justify-between sticky bottom-4 z-10">
+
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm font-bold text-secondary-light uppercase tracking-wider mb-1">Resumen de tu Inversión
+                </p>
+                <div class="flex items-center gap-4 text-sm text-secondary mb-1">
+                    <span>Paquete: <strong>${{ basePrice() }}</strong></span>
+                    <span>+ Tasa Estatal ({{ store.entityData().state | uppercase }}): <strong>${{ stateFee()
+                            }}</strong></span>
+                </div>
+                <div class="text-3xl font-extrabold text-secondary">
+                    Total: <span class="text-primary">${{ totalPrice() }}</span>
+                </div>
+            </div>
+
+            <div class="flex w-full md:w-auto gap-4">
+                <button type="button" (click)="goBack()"
+                    class="flex-1 md:flex-none bg-background hover:bg-gray-200 text-secondary font-bold py-3 px-6 rounded-lg transition-colors">
+                    Atrás
+                </button>
+
+                <button type="button" (click)="onSubmit()" [disabled]="store.selectedPlan() === ''"
+                    class="flex-1 md:flex-none bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-transform transform shadow-md flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    Ir al Checkout
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

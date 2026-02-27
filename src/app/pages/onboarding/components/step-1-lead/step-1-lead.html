@@ -1,1 +1,86 @@
-<p>step-1-lead works!</p>
+<div class="max-w-xl mx-auto bg-background-card p-6 md:p-8 rounded-xl shadow-lg mt-6 border border-gray-100">
+  <div class="mb-6 text-center">
+    <h2 class="text-2xl font-extrabold text-secondary mb-2">Comencemos tu Registro</h2>
+    <p class="text-sm text-secondary-light">Ingresa tus datos de contacto para enviarte el progreso de tu LLC.</p>
+  </div>
+
+  <form [formGroup]="leadForm" (ngSubmit)="onSubmit()" class="space-y-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Nombre -->
+      <div>
+        <label for="firstName" class="block text-sm font-bold text-secondary mb-1">Nombre *</label>
+        <input id="firstName" formControlName="firstName" type="text"
+          class="w-full px-4 py-2.5 bg-background border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors outline-none text-secondary"
+          placeholder="Ej: Carlos">
+        @if (leadForm.get('firstName')?.touched && leadForm.get('firstName')?.invalid) {
+        <p class="text-status-error text-xs mt-1 font-medium">El nombre es requerido.</p>
+        }
+      </div>
+
+      <!-- Apellido -->
+      <div>
+        <label for="lastName" class="block text-sm font-bold text-secondary mb-1">Apellido *</label>
+        <input id="lastName" formControlName="lastName" type="text"
+          class="w-full px-4 py-2.5 bg-background border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors outline-none text-secondary"
+          placeholder="Ej: Pérez">
+        @if (leadForm.get('lastName')?.touched && leadForm.get('lastName')?.invalid) {
+        <p class="text-status-error text-xs mt-1 font-medium">El apellido es requerido</p>
+        }
+      </div>
+    </div>
+
+    <!-- Correo Electrónico -->
+    <div>
+      <label for="email" class="block text-sm font-bold text-secondary mb-1">Correo Electrónico *</label>
+      <input id="email" type="email" formControlName="email"
+        class="w-full px-4 py-2.5 bg-background border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors outline-none text-secondary"
+        placeholder="carlos@empresa.com">
+      @if (leadForm.get('email')?.touched) {
+      @if (leadForm.get('email')?.hasError('required')) {
+      <p class="text-status-error text-xs mt-1 font-medium">El email es requerido.</p>
+      }
+      @if (leadForm.get('email')?.hasError('email')) {
+      <p class="text-status-error text-xs mt-1 font-medium">Ingresa un formato válido (ej: nombre@dominio.com).</p>
+      }
+      }
+    </div>
+
+    <!-- Teléfono -->
+    <div>
+      <label for="phone" class="block text-sm font-bold text-secondary mb-1">Teléfono (Opcional)</label>
+      <input id="phone" type="tel" formControlName="phone"
+        class="w-full px-4 py-2.5 bg-background border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors outline-none text-secondary"
+        placeholder="+1 (555) 000-0000">
+      <p class="text-xs text-secondary-light mt-1">Solo te contactaremos si hay problemas con tu aplicación.</p>
+    </div>
+
+    <div class="pt-4 border-t border-gray-100">
+      @if (errorMessage) {
+      <div
+        class="mb-4 p-3 bg-red-50 text-status-error text-sm rounded-lg border border-red-100 text-center font-medium">
+        {{ errorMessage }}
+      </div>
+      }
+      <button type="submit" [disabled]="isProcessing || !leadForm.valid"
+        class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-[1.02] shadow-md flex justify-center items-center gap-2 text-base disabled:opacity-50 disabled:cursor-not-allowed">
+
+        @if (isProcessing) {
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+          </path>
+        </svg>
+        Registrando contacto...
+        } @else {
+        Comenzar y revisar planes
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+            clip-rule="evenodd" />
+        </svg>
+        }
+      </button>
+    </div>
+  </form>
+</div>

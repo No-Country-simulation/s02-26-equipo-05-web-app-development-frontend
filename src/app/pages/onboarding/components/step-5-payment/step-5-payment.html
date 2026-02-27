@@ -1,1 +1,106 @@
-<p>step-5-payment works!</p>
+<div class="max-w-5xl mx-auto mt-4 px-4">
+    <div class="mb-8 text-center md:text-left">
+        <h2 class="text-3xl font-extrabold text-secondary mb-2">Completar Pago Seguro</h2>
+        <p class="text-secondary-light">Estás a un paso de lanzar {{ store.entityData().companyName }} al mundo.</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6">
+
+        <!-- COLUMNA IZQUIERDA (Formulario Stripe) -->
+        <div class="w-full md:w-2/3 space-y-6">
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 class="font-bold text-lg text-secondary mb-4">Información de contacto</h3>
+                <!-- Contenedor inyectado por Stripe para el Email (Link) -->
+                <div #linkAuthenticationElement class="mb-6"></div>
+
+                <h3 class="font-bold text-lg text-secondary mb-4 mt-6">Tarjeta de Crédito / Débito</h3>
+
+                <form id="payment-form" (ngSubmit)="onSubmit($event)">
+                    <!-- Contenedor inyectado por Stripe para Tarjetas/Apple Pay -->
+                    <div #paymentElement>
+                        @if(!elements) {
+                        <div class="flex justify-center items-center py-10">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                            <span class="ml-3 text-secondary-light">Conectando con pasarela segura...</span>
+                        </div>
+                        }
+                    </div>
+
+                    <button type="submit" [disabled]="isProcessing || !elements || !isFormValid"
+                        class="w-full mt-8 bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-xl transition-transform transform hover:scale-[1.02] shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+
+                        @if(isProcessing) {
+                        <span class="flex items-center justify-center gap-2">
+                            <div class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></div>
+                            Procesando Pago...
+                        </span>
+                        } @else {
+                        <span>Pagar {{ backendAmount ? (backendAmount / 100 | currency:'USD') : '...' }}</span>
+                        }
+                    </button>
+
+                    <!-- Mensaje de Error de Stripe -->
+                    @if(paymentMessage) {
+                    <div
+                        class="mt-4 p-4 bg-red-50 border border-red-200 text-status-error rounded-lg text-sm text-center">
+                        {{ paymentMessage }}
+                    </div>
+                    }
+                </form>
+
+                <p class="text-xs text-gray-400 text-center mt-6 flex items-center justify-center gap-1">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                    </svg>
+                    Pagos seguros y encriptados por <strong>Stripe</strong>.
+                </p>
+            </div>
+
+            <div class="flex justify-start mt-2">
+                <button (click)="goBack()"
+                    class="flex items-center gap-2 text-secondary-light hover:text-secondary font-medium transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Volver atrás
+                </button>
+            </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA (La Tarjeta Azul que pidió el usuario) -->
+        <div class="w-full md:w-1/3">
+            <div class="sticky top-10">
+
+                <div
+                    class="bg-primary/5 rounded-2xl p-6 text-secondary border border-primary/20 shadow-sm font-sans max-w-md">
+                    <div class="font-bold text-lg mb-5 text-secondary">Your plan</div>
+
+                    <!-- Fila 1: Nombre del Plan y Precio Base -->
+                    <div class="flex justify-between items-center mb-3 text-sm">
+                        <span class="font-semibold">{{ store.selectedPlan() | titlecase }}</span>
+                        <span>{{ backendPlanPrice ? (backendPlanPrice / 100 | currency:'USD') : '...' }}</span>
+                    </div>
+
+                    <!-- Fila 2: State Fee -->
+                    <div class="flex justify-between items-center mb-3 text-sm text-secondary-light">
+                        <span>State fee ({{ store.entityData().state | titlecase }})</span>
+                        <span>{{ backendStateFee ? (backendStateFee / 100 | currency:'USD') : '...' }}</span>
+                    </div>
+
+                    <!-- Fila 3: Total -->
+                    <div
+                        class="mt-4 pt-4 border-t border-primary/20 flex justify-between items-center font-extrabold text-xl text-secondary">
+                        <span>Total due today</span>
+                        <span>{{ backendAmount ? (backendAmount / 100 | currency:'USD') : '...' }}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

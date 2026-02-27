@@ -1,1 +1,8 @@
-<p>step-indicator works!</p>
+<div class="w-full mt-4">
+    <!-- Contenedor Barra Gris -->
+    <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+        <!-- Barra Interior Azul (Animada width %) -->
+        <div class="h-full bg-primary transition-all duration-500 ease-out" [style.width.%]="progressWidth()">
+        </div>
+    </div>
+</div>

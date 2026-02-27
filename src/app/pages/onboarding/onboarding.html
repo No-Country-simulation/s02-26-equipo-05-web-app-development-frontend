@@ -1,1 +1,51 @@
-<p>onboarding works!</p>
+<div class="h-screen overflow-hidden relative w-full">
+  <!-- Header fijo arriba -->
+  <div class="absolute top-0 left-0 right-0 z-10 py-6 px-4 bg-background-card flex flex-col items-center">
+    <!-- Encabezado / Logo / Indicador de Progreso -->
+    <div class="w-full max-w-2xl text-center">
+      <app-step-indicator [currentStep]="store.currentStep()" />
+    </div>
+  </div>
+
+  <!-- Contenedor de steps -->
+  <div class="relative w-full h-full overflow-x-hidden">
+    @switch (store.currentStep()) {
+    @case (1) {
+    <div class="absolute inset-0 overflow-y-auto pt-24 pb-10 px-4" [animate.enter]="enterClass()"
+      [animate.leave]="leaveClass()">
+      <div class="flex justify-center items-center min-h-full">
+        <app-step-1-lead class="w-full max-w-2xl h-fit" />
+      </div>
+    </div>
+    }
+
+    @case (2) {
+    <div class="absolute inset-0 overflow-y-auto pt-24 pb-10 flex justify-center px-4" [animate.enter]="enterClass()"
+      [animate.leave]="leaveClass()">
+      <app-step-2-entity-and-company class="w-full max-w-4xl h-fit" />
+    </div>
+    }
+
+    @case (3) {
+    <div class="absolute inset-0 overflow-y-auto pt-24 pb-10 flex justify-center px-4" [animate.enter]="enterClass()"
+      [animate.leave]="leaveClass()">
+      <app-step-3-package class="w-full max-w-4xl h-fit" />
+    </div>
+    }
+
+    @case (4) {
+    <div class="absolute inset-0 overflow-y-auto pt-24 pb-10 flex justify-center px-4" [animate.enter]="enterClass()"
+      [animate.leave]="leaveClass()">
+      <app-step-4-checkout class="w-full max-w-4xl h-fit" />
+    </div>
+    }
+
+    @case (5) {
+    <div class="absolute inset-0 overflow-y-auto pt-24 pb-10 flex justify-center px-4" [animate.enter]="enterClass()"
+      [animate.leave]="leaveClass()">
+      <app-step-5-payment class="w-full max-w-4xl h-fit" />
+    </div>
+    }
+    }
+  </div>
+</div>
