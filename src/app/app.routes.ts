@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/onboarding/onboarding').then((m) => m.Onboarding),
   },
   {
+    path: 'onboarding-success',
+    loadComponent: () => import('./pages/onboarding-success/onboarding-success').then((m) => m.OnboardingSuccess),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
