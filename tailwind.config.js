@@ -9,7 +9,8 @@ module.exports = {
                 // Los colores que hacen el 90% del trabajo pesado
                 primary: {
                     DEFAULT: '#0077B6', // Azul Eléctrico (Tu CTA/Botón principal)
-                    dark: '#005f92',    // Un poquito más oscuro para cuando le pasen el mouse (hover)
+                    dark: '#005f92',  // Un poquito más oscuro para cuando le pasen el mouse (hover)
+                    ligth: '#7DB5DB'
                 },
                 secondary: {
                     DEFAULT: '#1B263B', // Azul Navy Profundo (Títulos, Header)
@@ -18,7 +19,7 @@ module.exports = {
 
                 // Colores de Fondo
                 background: {
-                    DEFAULT: '#E0E1DD', // Gris Platino (Fondo del Funnel)
+                    DEFAULT: '#eeede9', // Gris Platino (Fondo del Funnel)
                     card: '#FFFFFF',    // Blanco Nieve (El fondo blanco de tu formulario)
                 },
 

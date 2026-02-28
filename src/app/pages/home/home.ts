@@ -1,15 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Hero } from './components/hero/hero';
 import { FeaturesGrid } from './components/features-grid/features-grid';
 import { SocialProof } from './components/social-proof/social-proof';
-import { Footer } from './components/footer/footer';
 import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Hero, FeaturesGrid, SocialProof, Footer, RouterLink],
+  imports: [Hero, FeaturesGrid, SocialProof],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

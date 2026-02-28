@@ -1,0 +1,10 @@
+<div class="min-h-screen flex flex-col bg-background-card scroll-smooth">
+    <!-- Cambiamos a top-4 para que flote un poco más abajo del borde y le damos padding lateral (px-4) -->
+    <header class="w-full sticky top-4 z-50 px-4 sm:px-8">
+        <app-navbar />
+    </header>
+    <main class="grow">
+        <router-outlet></router-outlet>
+    </main>
+    <app-footer />
+</div>

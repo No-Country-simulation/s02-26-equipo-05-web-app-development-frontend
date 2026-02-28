@@ -1,12 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Footer } from '../home/components/footer/footer';
 import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [RouterLink, Footer],
+  imports: [RouterLink],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })

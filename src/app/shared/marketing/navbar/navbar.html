@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<!-- Navbar simulado corporativo (estilo Isla Flotante) -->
+<nav
+    class="relative w-full max-w-full mx-auto h-20 py-2 bg-background/50 backdrop-blur-md border border-background/20 shadow-sm rounded-2xl flex items-center justify-between px-8 z-50">
+    <img routerLink="" src="logo-dark.svg" alt="Logo" class="h-full w-auto">
+    <!-- Escritorio -->
+    <div class="hidden sm:flex items-center gap-6 text-sm font-semibold text-secondary-light">
+        <a routerLink="/services" class="hover:text-primary transition-colors">Servicios</a>
+        <a routerLink="/pricing" class="hover:text-primary transition-colors">Precios</a>
+        <a routerLink="/onboarding"
+            class="px-4 py-2 bg-primary text-white hover:bg-primary-dark rounded-lg transition-colors">Registrate</a>
+    </div>
+
+    <!-- Móvil: Botón Hamburguesa -->
+    <button (click)="toggleMobileMenu()"
+        class="sm:hidden p-2 text-secondary-light hover:text-primary focus:outline-none">
+        <!-- Ícono Menú -->
+        <svg [class.hidden]="isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Ícono Cerrar (X) -->
+        <svg [class.hidden]="!isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+</nav>
+
+<!-- Móvil: Menú Desplegable Flotante -->
+<div [class.hidden]="!isMobileMenuOpen"
+    class="sm:hidden absolute top-24 left-0 right-0 bg-white/95 backdrop-blur-lg border border-gray-200 shadow-xl rounded-2xl p-6 flex flex-col gap-4 z-40 mx-auto max-w-md w-full">
+    <a routerLink="/services" (click)="toggleMobileMenu()"
+        class="text-secondary-light hover:text-primary font-semibold text-center border-b border-gray-100 pb-3">Servicios</a>
+    <a routerLink="/pricing" (click)="toggleMobileMenu()"
+        class="text-secondary-light hover:text-primary font-semibold text-center border-b border-gray-100 pb-3">Precios</a>
+    <a routerLink="/onboarding" (click)="toggleMobileMenu()"
+        class="bg-primary text-white hover:bg-primary-dark rounded-xl py-3 mt-2 font-semibold text-center transition-colors shadow-sm">Registrate</a>
+</div>

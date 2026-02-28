@@ -13,8 +13,8 @@
 
             <!-- 1. STARTER PLAN -->
             <div (click)="selectPlan('starter')"
-                class="cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
-                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'starter', 'border-gray-200': store.selectedPlan() !== 'starter'}">
+                class="cursor-pointer border rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-primary-ligth/10"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'starter', 'border-gray-300': store.selectedPlan() !== 'starter'}">
                 <h3 class="text-lg font-bold text-secondary">Starter</h3>
                 <p class="text-sm text-secondary-light mt-2 h-10">Lo básico para abrir tu empresa legalmente.</p>
                 <div class="mt-4 mb-6">
@@ -44,7 +44,7 @@
                 </ul>
                 <div class="mt-auto">
                     <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
-                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'starter', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'starter'}">
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'starter', 'bg-gray-300 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'starter'}">
                         {{ store.selectedPlan() === 'starter' ? 'Seleccionado' : 'Elegir Starter' }}
                     </button>
                 </div>
@@ -52,8 +52,8 @@
 
             <!-- 2. BUSINESS BOX (POPULAR) -->
             <div (click)="selectPlan('business_in_a_box')"
-                class="relative cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
-                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'business_in_a_box', 'border-gray-200': store.selectedPlan() !== 'business_in_a_box'}">
+                class="relative cursor-pointer border rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-primary-ligth/40"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'business_in_a_box', 'border-gray-300': store.selectedPlan() !== 'business_in_a_box'}">
 
                 <!-- Etiqueta Popular -->
                 <div class="absolute top-0 right-0 transform translate-x-2 -translate-y-3">
@@ -96,7 +96,7 @@
                 </ul>
                 <div class="mt-auto">
                     <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
-                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'business_in_a_box', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'business_in_a_box'}">
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'business_in_a_box', 'bg-gray-300 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'business_in_a_box'}">
                         {{ store.selectedPlan() === 'business_in_a_box' ? 'Seleccionado' : 'Elegir Business Box' }}
                     </button>
                 </div>
@@ -104,8 +104,8 @@
 
             <!-- 3. TAX COMPLIANCE -->
             <div (click)="selectPlan('tax_compliance')"
-                class="cursor-pointer border-2 rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-background-card"
-                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'tax_compliance', 'border-gray-200': store.selectedPlan() !== 'tax_compliance'}">
+                class="cursor-pointer border rounded-2xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl bg-primary-ligth/20"
+                [ngClass]="{'border-primary shadow-lg ring-4 ring-primary/10': store.selectedPlan() === 'tax_compliance', 'border-gray-300': store.selectedPlan() !== 'tax_compliance'}">
                 <h3 class="text-lg font-bold text-secondary">Tax Compliance</h3>
                 <p class="text-sm text-secondary-light mt-2 h-10">Mantenimiento y contabilidad anual para tranquilidad.
                 </p>
@@ -135,7 +135,7 @@
                 </ul>
                 <div class="mt-auto">
                     <button type="button" class="w-full py-2 rounded-lg font-bold transition-colors"
-                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'tax_compliance', 'bg-gray-100 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'tax_compliance'}">
+                        [ngClass]="{'bg-primary text-white': store.selectedPlan() === 'tax_compliance', 'bg-gray-300 text-secondary hover:bg-gray-200': store.selectedPlan() !== 'tax_compliance'}">
                         {{ store.selectedPlan() === 'tax_compliance' ? 'Seleccionado' : 'Elegir Compliance' }}
                     </button>
                 </div>
