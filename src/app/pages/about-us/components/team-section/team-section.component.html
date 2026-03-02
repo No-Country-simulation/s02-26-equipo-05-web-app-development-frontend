@@ -1,0 +1,47 @@
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Encabezado -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary leading-tight">Nuestro Equipo</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Profesionales comprometidos con ayudarte a lanzar y escalar tu empresa en EE.UU.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for (member of team; track member.name) {
+      <div
+        class="group bg-gray-50 rounded-2xl border border-gray-100 p-8 text-center shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
+      >
+        <!-- Imagen -->
+        <div class="relative w-28 h-28 mx-auto mb-6">
+          <div
+            class="absolute inset-0 rounded-full bg-primary/10 scale-110 opacity-0 group-hover:opacity-100 transition duration-300"
+          ></div>
+          <img
+            [src]="member.image"
+            [alt]="member.alt"
+            class="relative w-28 h-28 rounded-full object-cover"
+          />
+        </div>
+
+        <!-- Nombre -->
+        <h3 class="text-lg font-semibold text-secondary">
+          {{ member.name }}
+        </h3>
+
+        <!-- Rol -->
+        <span class="block text-sm font-semibold text-primary mt-1 uppercase tracking-wide">
+          {{ member.role }}
+        </span>
+
+        <!-- Descripción -->
+        <p class="text-gray-600 mt-4 text-sm leading-relaxed">
+          {{ member.description }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+</section>

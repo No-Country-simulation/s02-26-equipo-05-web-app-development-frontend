@@ -1,0 +1,44 @@
+<section class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Encabezado -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary leading-tight">
+        ¿Por Qué Confiar en Nosotros?
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Construimos confianza con transparencia, respaldo legal y excelencia operativa.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (item of items; track item.title) {
+      <div
+        class="group relative bg-white p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center"
+      >
+        <!-- Fondo sutil hover -->
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+        ></div>
+
+        <!-- Icono -->
+        <div
+          class="relative w-16 h-16 mx-auto mb-6 rounded-xl bg-primary/10 flex items-center justify-center"
+        >
+          <img [src]="item.image" [alt]="item.alt" class="w-8 h-8 object-contain" />
+        </div>
+
+        <!-- Título -->
+        <h3 class="relative text-xl font-semibold text-secondary mb-3">
+          {{ item.title }}
+        </h3>
+
+        <!-- Descripción -->
+        <p class="relative text-gray-600 leading-relaxed">
+          {{ item.description }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+</section>

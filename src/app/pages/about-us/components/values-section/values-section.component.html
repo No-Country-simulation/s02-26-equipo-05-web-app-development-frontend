@@ -1,0 +1,38 @@
+<section class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Encabezado -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary leading-tight">Nuestros Valores</h2>
+
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        En All in One Solutions, creemos que nuestros valores son la base de todo lo que hacemos.
+        Estos principios guían nuestras decisiones y reflejan nuestro compromiso con clientes,
+        colaboradores y la comunidad.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (value of values; track value.title) {
+      <div
+        class="group bg-white p-10 rounded-2xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+      >
+        <!-- Icono -->
+        <div class="w-14 h-14 mb-6 rounded-xl bg-primary/10 flex items-center justify-center">
+          <img [src]="value.image" [alt]="value.alt" class="w-7 h-7 object-contain" />
+        </div>
+
+        <!-- Título -->
+        <h3 class="text-xl font-semibold text-secondary mb-3">
+          {{ value.title }}
+        </h3>
+
+        <!-- Descripción -->
+        <p class="text-gray-600 leading-relaxed">
+          {{ value.description }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+</section>
