@@ -15,9 +15,6 @@ export class Home implements OnInit {
   analytics = inject(AnalyticsService);
 
   ngOnInit() {
-    // 1. Atrapa los UTMs de la URL generada por los anuncios
-    this.analytics.captureUrlParams();
-
     // 2. Grita al Data Layer "page_view" para que Meta y Google sepan que llegó.
     this.analytics.trackEvent('page_view', { page_title: 'Home Doola Style' });
   }
