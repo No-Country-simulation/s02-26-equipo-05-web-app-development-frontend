@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface Value {
   title: string;
   description: string;
-  image: string;
+  icon: string;
   alt: string;
 }
 
@@ -17,20 +17,20 @@ export class ValuesSectionComponent {
   values: Value[] = [
     {
       title: 'Transparencia',
-      description: 'Comunicación clara y honesta.',
-      image: 'assets/icons/transparencia.svg',
+      description: 'Comunicación clara y honesta en tu mismo idioma.',
+      icon: 'transparencia',
       alt: 'Icono de transparencia',
     },
     {
       title: 'Eficiencia',
-      description: 'Optimizamos procesos para ahorrar tiempo y dinero.',
-      image: 'assets/icons/eficiencia.svg',
+      description: 'Optimización de procesos para ahorrar tiempo y dinero.',
+      icon: 'eficiencia',
       alt: 'Icono de eficiencia',
     },
     {
       title: 'Accesibilidad',
-      description: 'Servicios diseñados para todos los tamaños de negocio.',
-      image: 'assets/icons/accesibilidad.svg',
+      description: 'Servicios diseñados para todo tipo de negocio.',
+      icon: 'accesibilidad',
       alt: 'Icono de accesibilidad',
     },
   ];

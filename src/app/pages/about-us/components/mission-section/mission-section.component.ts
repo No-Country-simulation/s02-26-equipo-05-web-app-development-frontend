@@ -12,18 +12,18 @@ export class MissionSectionComponent {
 
   description = `
     Nacimos con una misión clara: transformar la forma en que las empresas operan.
-    Creemos que la tecnología y el servicio al cliente deben ir de la mano para crear soluciones que realmente impacten los negocios.
+    Creemos que la tecnología y el servicio al cliente deben ir de la mano para crear soluciones que realmente impacten sobre los negocios.
   `;
 
   highlights = [
     {
-      image: 'assets/icons/innovation.svg',
+      icon: 'innovation',
       alt: 'Icono de innovación',
       title: 'Innovación Constante',
       description: 'Comprometidos con ofrecer las mejores soluciones.',
     },
     {
-      image: 'assets/icons/value.svg',
+      icon: 'value',
       alt: 'Icono de valor',
       title: 'Valor Real',
       description: 'Medimos nuestro éxito por el impacto en tus resultados.',

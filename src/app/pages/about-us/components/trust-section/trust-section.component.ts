@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface TrustItem {
   title: string;
   description: string;
-  image: string;
+  icon: string;
   alt: string;
 }
 
@@ -18,19 +18,19 @@ export class TrustSectionComponent {
     {
       title: 'Verificado y Certificado',
       description: 'Cumplimos con estándares internacionales.',
-      image: 'assets/icons/certificado.svg',
+      icon: 'certificado',
       alt: 'Icono de certificación',
     },
     {
       title: 'Altamente Calificados',
       description: '4.9 estrellas en plataformas independientes.',
-      image: 'assets/icons/estrellas.svg',
+      icon: 'estrellas',
       alt: 'Icono de calificación alta',
     },
     {
       title: 'Sin Problemas Legales',
       description: 'Operamos con transparencia total.',
-      image: 'assets/icons/legal.svg',
+      icon: 'legal',
       alt: 'Icono legal y seguro',
     },
   ];
